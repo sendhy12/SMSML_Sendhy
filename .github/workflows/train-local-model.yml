@@ -9,9 +9,18 @@ on:
 jobs:
   train-model:
     runs-on: ubuntu-latest
+    env:
+      MLFLOW_TRACKING_URI: https://dagshub.com/sendhy12/modelling.mlflow
+      MLFLOW_TRACKING_USERNAME: sendhy12
+      MLFLOW_TRACKING_PASSWORD: feed3e8ecbba6b109d64fecfb04eb1fb648d230d
+
     steps:
       - uses: actions/checkout@v3
+
       - name: Install Python + dependencies
         run: |
           pip install -r Membangun_model/requirements.txt
+
+      - name: Train the model
+        run: |
           python Membangun_model/modelling_tuning.py
