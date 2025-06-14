@@ -1,0 +1,17 @@
+name: Local Training CI
+
+on:
+  push:
+    paths:
+      - "Membangun_model/**"
+  workflow_dispatch:
+
+jobs:
+  train-model:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Python + dependencies
+        run: |
+          pip install -r Membangun_model/requirements.txt
+          python Membangun_model/modelling_tuning.py

@@ -1,0 +1,17 @@
+name: MLflow Project CI
+
+on:
+  push:
+    paths:
+      - "MLProject/**"
+  workflow_dispatch:
+
+jobs:
+  run-mlproject:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run MLflow
+        run: |
+          cd MLProject
+          mlflow run .
