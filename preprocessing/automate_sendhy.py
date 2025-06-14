@@ -100,7 +100,7 @@ if __name__ == "__main__":
     preprocessor = DataPreprocessor()
     
     # Sesuaikan dengan dataset Anda
-    raw_data_path = "..\heart.csv"
+    raw_data_path = "heart.csv"
     target_column = "target"
     output_directory = "./dataset_preprocessing"
     
