@@ -102,7 +102,7 @@ if __name__ == "__main__":
     # Sesuaikan dengan dataset Anda
     raw_data_path = os.path.join(os.path.dirname(__file__), '..', 'heart.csv')
     target_column = "target"
-    output_directory = "./dataset_preprocessing"
+    output_directory = os.path.join(os.path.dirname(__file__), 'dataset_preprocessing')
     
     # Run preprocessing
     X_train, X_test, y_train, y_test = preprocessor.preprocess_data(
