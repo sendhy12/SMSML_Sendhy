@@ -9,10 +9,10 @@ def train_model():
     
     with mlflow.start_run():
         # Load data
-        X_train = pd.read_csv('../preprocessed-data/X_train.csv')
-        X_test = pd.read_csv('../preprocessed-data/X_test.csv')
-        y_train = pd.read_csv('../preprocessed-data/y_train.csv').values.ravel()
-        y_test = pd.read_csv('../preprocessed-data/y_test.csv').values.ravel()
+        X_train = pd.read_csv('preprocessed-data/X_train.csv')
+        X_test = pd.read_csv('preprocessed-data/X_test.csv')
+        y_train = pd.read_csv('preprocessed-data/y_train.csv').values.ravel()
+        y_test = pd.read_csv('preprocessed-data/y_test.csv').values.ravel()
         
         # Train model
         model = RandomForestClassifier(n_estimators=100, random_state=42)
