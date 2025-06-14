@@ -24,13 +24,24 @@ jobs:
           python -m pip install --upgrade pip
           pip install pandas numpy scikit-learn matplotlib seaborn
 
+      - name: Check file structure
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Files in current directory:"
+          ls -la
+          echo "Looking for Python files:"
+          find . -name "*.py"
+          echo "Looking for CSV files:"
+          find . -name "*.csv"
+
       - name: Run preprocessing
         run: |
-          cd preprocessing
           python automate_sendhy.py
 
       - name: Upload preprocessed data
         uses: actions/upload-artifact@v3
         with:
           name: preprocessed-data
-          path: preprocessing/dataset_preprocessing/
+          path: dataset_preprocessing/
+        if: success()
