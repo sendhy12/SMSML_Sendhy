@@ -1,17 +1,30 @@
-name: MLflow Project CI
+name: CI MLflow Project
 
 on:
   push:
-    paths:
-      - "MLProject/**"
-  workflow_dispatch:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
-  run-mlproject:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Run MLflow Project
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r Membangun_model/requirements.txt
+
+      - name: Run MLflow modelling
         run: |
           cd Workflow-CI/MLProject
           python modelling.py
