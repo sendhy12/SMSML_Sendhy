@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/laragon/www/SMSML_Sendhy/Workflow-CI/MLProject/mlruns/112564064661469176/a2afe4abc472406581d1f71fbb38bb90/artifacts
+end_time: 1749936612690
+entry_point_name: ''
+experiment_id: '112564064661469176'
+lifecycle_stage: active
+run_id: a2afe4abc472406581d1f71fbb38bb90
+run_name: mysterious-hog-474
+run_uuid: a2afe4abc472406581d1f71fbb38bb90
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749936604422
+status: 3
+tags: []
+user_id: asus
