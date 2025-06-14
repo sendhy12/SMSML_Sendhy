@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/laragon/www/Eksperimen_SML_Sendhy/Membangun_model/mlruns/734033652014578519/c9716d0a098140029bc34da0e3bc0814/artifacts
+end_time: 1749900476734
+entry_point_name: ''
+experiment_id: '734033652014578519'
+lifecycle_stage: active
+run_id: c9716d0a098140029bc34da0e3bc0814
+run_name: likeable-goose-922
+run_uuid: c9716d0a098140029bc34da0e3bc0814
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749900476655
+status: 4
+tags: []
+user_id: asus

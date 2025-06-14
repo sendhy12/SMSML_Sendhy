@@ -6,13 +6,20 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 import matplotlib.pyplot as plt
+import os
+import mlflow
+
+os.environ['MLFLOW_TRACKING_URI'] = 'https://dagshub.com/sendhy12/modelling.mlflow/'
+os.environ['MLFLOW_TRACKING_USERNAME'] = 'sendhy12'
+os.environ['MLFLOW_TRACKING_PASSWORD'] = 'feed3e8ecbba6b109d64fecfb04eb1fb648d230d'
+
 
 def load_data():
     """Load preprocessed data"""
-    X_train = pd.read_csv('./dataset_preprocessing/X_train.csv')
-    X_test = pd.read_csv('./dataset_preprocessing/X_test.csv')
-    y_train = pd.read_csv('./dataset_preprocessing/y_train.csv').values.ravel()
-    y_test = pd.read_csv('./dataset_preprocessing/y_test.csv').values.ravel()
+    X_train = pd.read_csv('../preprocessing/preprocessed-data/X_train.csv')
+    X_test = pd.read_csv('../preprocessing/preprocessed-data/X_test.csv')
+    y_train = pd.read_csv('../preprocessing/preprocessed-data/y_train.csv').values.ravel()
+    y_test = pd.read_csv('../preprocessing/preprocessed-data/y_test.csv').values.ravel()
     
     return X_train, X_test, y_train, y_test
 

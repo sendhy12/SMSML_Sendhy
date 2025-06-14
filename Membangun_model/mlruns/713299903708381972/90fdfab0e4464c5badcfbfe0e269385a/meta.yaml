@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/laragon/www/Eksperimen_SML_Sendhy/Membangun_model/mlruns/713299903708381972/90fdfab0e4464c5badcfbfe0e269385a/artifacts
+end_time: 1749901510933
+entry_point_name: ''
+experiment_id: '713299903708381972'
+lifecycle_stage: active
+run_id: 90fdfab0e4464c5badcfbfe0e269385a
+run_name: suave-cod-197
+run_uuid: 90fdfab0e4464c5badcfbfe0e269385a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749901440450
+status: 3
+tags: []
+user_id: asus
