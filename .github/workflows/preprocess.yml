@@ -26,8 +26,8 @@ jobs:
 
       - name: Run preprocessing
         run: |
-          cd D:\laragon\www\Eksperimen_SML_Sendhy\preprocessing
-          python D:\laragon\www\Eksperimen_SML_Sendhy\preprocessing\automate_sendhy.py
+          cd ../../preprocessing
+          python automate_sendhy.py
 
       - name: Upload preprocessed data
         uses: actions/upload-artifact@v4

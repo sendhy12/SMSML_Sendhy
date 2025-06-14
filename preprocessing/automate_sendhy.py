@@ -110,6 +110,7 @@ if __name__ == "__main__":
             "data/heart.csv", 
             "dataset/heart.csv",
             "Eksperimen_SML_Sendhy/heart.csv",
+            "D:\laragon\www\Eksperimen_SML_Sendhy\heart.csv",
             os.path.join("Eksperimen_SML_Sendhy", "heart.csv")
         ]
         
