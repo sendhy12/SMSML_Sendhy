@@ -14,13 +14,23 @@ os.environ['MLFLOW_TRACKING_USERNAME'] = 'sendhy12'
 os.environ['MLFLOW_TRACKING_PASSWORD'] = 'feed3e8ecbba6b109d64fecfb04eb1fb648d230d'
 
 
+import os
+import pandas as pd
+
 def load_data():
-    """Load preprocessed data"""
-    X_train = pd.read_csv('../preprocessing/preprocessed-data/X_train.csv')
-    X_test = pd.read_csv('../preprocessing/preprocessed-data/X_test.csv')
-    y_train = pd.read_csv('../preprocessing/preprocessed-data/y_train.csv').values.ravel()
-    y_test = pd.read_csv('../preprocessing/preprocessed-data/y_test.csv').values.ravel()
-    
+    """Load preprocessed data from Eksperimen_SML_Sendhy/preprocessing/preprocessed-data"""
+    # Ambil direktori file ini
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Bangun path ke folder preprocessed-data
+    data_dir = os.path.join(base_dir, "..", "Eksperimen_SML_Sendhy", "preprocessing", "preprocessed-data")
+
+    # Baca dataset
+    X_train = pd.read_csv(os.path.join(data_dir, "X_train.csv"))
+    X_test = pd.read_csv(os.path.join(data_dir, "X_test.csv"))
+    y_train = pd.read_csv(os.path.join(data_dir, "y_train.csv")).values.ravel()
+    y_test = pd.read_csv(os.path.join(data_dir, "y_test.csv")).values.ravel()
+
     return X_train, X_test, y_train, y_test
 
 def train_model_with_tuning():
