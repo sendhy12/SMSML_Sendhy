@@ -9,11 +9,6 @@ import matplotlib.pyplot as plt
 import os
 import mlflow
 
-os.environ['MLFLOW_TRACKING_URI'] = 'https://dagshub.com/sendhy12/modelling.mlflow/'
-os.environ['MLFLOW_TRACKING_USERNAME'] = 'sendhy12'
-os.environ['MLFLOW_TRACKING_PASSWORD'] = 'feed3e8ecbba6b109d64fecfb04eb1fb648d230d'
-
-
 import os
 import pandas as pd
 
