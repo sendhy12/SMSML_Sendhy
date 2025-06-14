@@ -1,4 +1,4 @@
-# automate_sendhy.py
+# automate_[Nama-Anda].py
 
 import pandas as pd
 import numpy as np
@@ -14,8 +14,6 @@ class DataPreprocessor:
         
     def load_data(self, file_path):
         """Load raw dataset"""
-        if not os.path.exists(file_path):
-            raise FileNotFoundError(f"Dataset file not found: {file_path}")
         return pd.read_csv(file_path)
     
     def handle_missing_values(self, df):
@@ -30,8 +28,7 @@ class DataPreprocessor:
         # Categorical columns: fill with mode
         categorical_cols = df_clean.select_dtypes(include=['object']).columns
         for col in categorical_cols:
-            if not df_clean[col].mode().empty:
-                df_clean[col].fillna(df_clean[col].mode()[0], inplace=True)
+            df_clean[col].fillna(df_clean[col].mode()[0], inplace=True)
             
         return df_clean
     
@@ -58,7 +55,6 @@ class DataPreprocessor:
         """Complete preprocessing pipeline"""
         print("Loading data...")
         df = self.load_data(file_path)
-        print(f"Data loaded successfully. Shape: {df.shape}")
         
         print("Handling missing values...")
         df_clean = self.handle_missing_values(df)
@@ -101,50 +97,21 @@ class DataPreprocessor:
 
 # Main execution
 if __name__ == "__main__":
-    try:
-        preprocessor = DataPreprocessor()
-        
-        # Cek berbagai kemungkinan lokasi file dataset
-        possible_paths = [
-            "heart.csv",  # File ada di root directory berdasarkan struktur yang ditunjukkan
-            "data/heart.csv", 
-            "dataset/heart.csv",
-            "Eksperimen_SML_Sendhy/heart.csv",
-            "D:\laragon\www\Eksperimen_SML_Sendhy\heart.csv",
-            os.path.join("Eksperimen_SML_Sendhy", "heart.csv")
-        ]
-        
-        dataset_path = None
-        for path in possible_paths:
-            if os.path.exists(path):
-                dataset_path = path
-                break
-        
-        if dataset_path is None:
-            print("Dataset file tidak ditemukan di lokasi manapun.")
-            print("File yang tersedia:")
-            for root, dirs, files in os.walk("."):
-                for file in files:
-                    if file.endswith('.csv'):
-                        print(f"  {os.path.join(root, file)}")
-            exit(1)
-            
-        print(f"Using dataset: {dataset_path}")
-        target_column = "target"
-        output_directory = "./dataset_preprocessing"
-        
-        # Run preprocessing
-        X_train, X_test, y_train, y_test = preprocessor.preprocess_data(
-            dataset_path, target_column
-        )
-        
-        # Save results
-        preprocessor.save_preprocessed_data(
-            X_train, X_test, y_train, y_test, output_directory
-        )
-        
-        print("Preprocessing completed successfully!")
-        
-    except Exception as e:
-        print(f"Error during preprocessing: {str(e)}")
-        exit(1)
+    preprocessor = DataPreprocessor()
+    
+    # Sesuaikan dengan dataset Anda
+    raw_data_path = "..\heart.csv"
+    target_column = "target"
+    output_directory = "./dataset_preprocessing"
+    
+    # Run preprocessing
+    X_train, X_test, y_train, y_test = preprocessor.preprocess_data(
+        raw_data_path, target_column
+    )
+    
+    # Save results
+    preprocessor.save_preprocessed_data(
+        X_train, X_test, y_train, y_test, output_directory
+    )
+    
+    print("Preprocessing completed successfully!")
